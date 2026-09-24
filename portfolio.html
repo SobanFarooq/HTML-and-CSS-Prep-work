@@ -1,0 +1,1071 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soban Farooq | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1d2535;
+            background: #0b0f19;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+            .logo span,
+            .hero h1 span,
+            .footer-logo span {
+                color: #5eead4;
+            }
+
+        .navbar nav {
+            display: flex;
+            gap: 32px;
+        }
+
+            .navbar nav a {
+                color: #9ca3af;
+                font-size: 14px;
+                transition: 0.3s;
+            }
+
+                .navbar nav a:hover {
+                    color: #5eead4;
+                }
+
+        .nav-btn {
+            border: 1px solid #5eead4;
+            color: #5eead4;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .hero {
+            min-height: 88vh;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #5eead4;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 85px);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -3px;
+        }
+
+        .hero h2 {
+            color: #d1d5db;
+            font-size: 25px;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .hero-text {
+            color: #8d98aa;
+            max-width: 580px;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #5eead4;
+            color: #071013;
+        }
+
+            .primary-btn:hover {
+                background: #99f6e4;
+                transform: translateY(-2px);
+            }
+
+        .secondary-btn {
+            border: 1px solid #30394b;
+            color: #d1d5db;
+        }
+
+            .secondary-btn:hover {
+                border-color: #5eead4;
+                color: #5eead4;
+            }
+
+        .hero-card {
+            width: 340px;
+            padding: 45px 30px;
+            border: 1px solid #263044;
+            border-radius: 15px;
+            text-align: center;
+            background: #101623;
+        }
+
+        .profile-circle {
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #172330;
+            border: 2px solid #5eead4;
+            color: #5eead4;
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .hero-card p {
+            color: #8994a6;
+            font-size: 14px;
+        }
+
+        .status {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #263044;
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+            .status span {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background: #5eead4;
+                border-radius: 50%;
+                margin-right: 7px;
+            }
+
+        .section {
+            padding: 100px 8%;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+            .section-heading p {
+                color: #5eead4;
+                font-size: 12px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+            }
+
+            .section-heading h2 {
+                font-size: 42px;
+                line-height: 1.2;
+            }
+
+        .about {
+            background: #0e1420;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #8f9aac;
+            margin-bottom: 18px;
+            max-width: 650px;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-box {
+            padding: 30px 20px;
+            background: #131b2a;
+            border: 1px solid #222d40;
+            border-radius: 10px;
+        }
+
+            .info-box strong {
+                display: block;
+                color: #5eead4;
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+
+            .info-box span {
+                color: #8994a6;
+                font-size: 13px;
+            }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 30px 25px;
+            background: #101623;
+            border: 1px solid #242e40;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+            .skill-card:hover {
+                transform: translateY(-6px);
+                border-color: #5eead4;
+            }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border-radius: 8px;
+            background: #172330;
+            color: #5eead4;
+            font-weight: bold;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #8994a6;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+            .skill-tags span {
+                padding: 5px 9px;
+                background: #182131;
+                color: #9ca3af;
+                border-radius: 4px;
+                font-size: 11px;
+            }
+
+        .hobbies {
+            background: #0e1420;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .hobby-card {
+            padding: 30px 25px;
+            border: 1px solid #242e40;
+            border-radius: 10px;
+            background: #101623;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+            .hobby-card:hover {
+                transform: translateY(-5px);
+                border-color: #5eead4;
+            }
+
+        .hobby-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .hobby-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .hobby-card p {
+            color: #8994a6;
+            font-size: 13px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 30px;
+            min-height: 350px;
+            background: #101623;
+            border: 1px solid #242e40;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+            .project-card:hover {
+                border-color: #5eead4;
+                transform: translateY(-5px);
+            }
+
+        .project-number {
+            color: #38465c;
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        .project-type {
+            color: #5eead4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-content h3 {
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .project-content p {
+            color: #8994a6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+            .project-tech span {
+                padding: 5px 9px;
+                background: #182131;
+                color: #9ca3af;
+                border-radius: 4px;
+                font-size: 11px;
+            }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #d1d5db;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+            .project-link:hover {
+                color: #5eead4;
+            }
+
+        .education {
+            background: #0e1420;
+        }
+
+        .education-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 35px;
+            border: 1px solid #263044;
+            border-radius: 12px;
+            background: #101623;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .university-icon {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #172330;
+            color: #5eead4;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .education-box h3 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .education-box h4 {
+            color: #5eead4;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .education-box p {
+            color: #8994a6;
+            font-size: 14px;
+        }
+
+        .contact {
+            background: #0b0f19;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 50px;
+            text-align: center;
+            border: 1px solid #293447;
+            border-radius: 15px;
+            background: #101623;
+        }
+
+            .contact-box .section-heading {
+                margin-bottom: 20px;
+            }
+
+            .contact-box > p {
+                color: #8994a6;
+                max-width: 550px;
+                margin: 0 auto 30px;
+            }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            color: #6f7c90;
+            font-size: 12px;
+        }
+
+        footer {
+            padding: 30px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #1d2535;
+            color: #68758a;
+            font-size: 12px;
+        }
+
+        .footer-logo {
+            color: #f1f5f9;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+            .social-links a:hover {
+                color: #5eead4;
+            }
+
+        @media (max-width: 1000px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .skills-grid,
+            .hobbies-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 18px 5%;
+            }
+
+                .navbar nav {
+                    display: none;
+                }
+
+            .nav-btn {
+                padding: 7px 12px;
+            }
+
+            .hero,
+            .section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero {
+                padding-top: 60px;
+            }
+
+                .hero h1 {
+                    font-size: 55px;
+                }
+
+                .hero h2 {
+                    font-size: 20px;
+                }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .skills-grid,
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-box {
+                padding: 45px 25px;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Soban<span>.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-btn">Let's Talk</a>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <p class="small-title">HELLO, I'M</p>
+
+                <h1>Soban <span>Farooq</span></h1>
+
+                <h2>Computer Science Student & Aspiring Developer</h2>
+
+                <p class="hero-text">
+                    I'm a 19-year-old Computer Science student at Air University,
+                    Islamabad. I enjoy programming, exploring artificial
+                    intelligence and building small projects that turn ideas
+                    into something useful.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="primary-btn">View My Work</a>
+                    <a href="#about" class="secondary-btn">About Me</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="profile-circle">SF</div>
+
+                <h3>Soban Farooq</h3>
+
+                <p>Computer Science Student</p>
+
+                <div class="status">
+                    <span></span>
+                    Learning, Building & Exploring
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="about section" id="about">
+
+            <div class="section-heading">
+                <p>GET TO KNOW ME</p>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <h3>A student who enjoys building things.</h3>
+
+                    <p>
+                        My name is Soban Farooq. I'm 19 years old and currently
+                        studying Computer Science at Air University in Islamabad.
+                    </p>
+
+                    <p>
+                        I'm interested in software development, artificial
+                        intelligence, web development and automation. I like
+                        learning by actually building projects instead of only
+                        studying the theory.
+                    </p>
+
+                    <p>
+                        I'm still developing my skills and exploring different
+                        areas of computer science. My current goal is to become
+                        a strong developer and eventually work on useful
+                        software and AI-based solutions.
+                    </p>
+
+                </div>
+
+                <div class="about-info">
+
+                    <div class="info-box">
+                        <strong>19</strong>
+                        <span>Years Old</span>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>CS</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>Islamabad</strong>
+                        <span>Pakistan</span>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>AI</strong>
+                        <span>Current Interest</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="skills section" id="skills">
+
+            <div class="section-heading">
+                <p>WHAT I'M LEARNING</p>
+                <h2>My Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-icon">&lt;/&gt;</div>
+
+                    <h3>Web Development</h3>
+
+                    <p>
+                        Learning to create responsive and clean websites
+                        using front-end technologies.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-card">
+                    <div class="skill-icon">AI</div>
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Exploring AI concepts, APIs, chatbots and practical
+                        AI applications.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>AI APIs</span>
+                        <span>Chatbots</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-card">
+                    <div class="skill-icon">PY</div>
+
+                    <h3>Programming</h3>
+
+                    <p>
+                        Practicing programming fundamentals and problem
+                        solving through university and personal projects.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>C++</span>
+                        <span>Java</span>
+                    </div>
+                </div>
+
+
+                <div class="skill-card">
+                    <div class="skill-icon">DB</div>
+
+                    <h3>Databases</h3>
+
+                    <p>
+                        Learning how applications store, organize and
+                        retrieve information using databases.
+                    </p>
+
+                    <div class="skill-tags">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>Database</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="hobbies section" id="hobbies">
+
+            <div class="section-heading">
+                <p>WHEN I'M NOT CODING</p>
+                <h2>My Hobbies</h2>
+            </div>
+
+            <div class="hobbies-grid">
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎮</div>
+                    <h3>Gaming</h3>
+                    <p>
+                        Playing games with friends and exploring different
+                        types of games.
+                    </p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p>
+                        Experimenting with code and building random ideas
+                        whenever I get the chance.
+                    </p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">🤖</div>
+                    <h3>AI & Technology</h3>
+                    <p>
+                        Following new technology and experimenting with
+                        interesting AI tools.
+                    </p>
+                </div>
+
+                <div class="hobby-card">
+                    <div class="hobby-icon">📚</div>
+                    <h3>Learning</h3>
+                    <p>
+                        Learning new concepts and going down random
+                        technology rabbit holes.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="projects section" id="projects">
+
+            <div class="section-heading">
+                <p>THINGS I'VE WORKED ON</p>
+                <h2>Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <div class="project-number">01</div>
+
+                    <div class="project-content">
+
+                        <span class="project-type">Web Development</span>
+
+                        <h3>Student Management System</h3>
+
+                        <p>
+                            A simple academic management system designed to
+                            organize student records, courses and other
+                            university-related information.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">02</div>
+
+                    <div class="project-content">
+
+                        <span class="project-type">AI Project</span>
+
+                        <h3>AI Study Assistant</h3>
+
+                        <p>
+                            A project idea for helping students organize
+                            study material, summarize notes and ask questions
+                            through an AI-powered assistant.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>AI API</span>
+                            <span>Chatbot</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">03</div>
+
+                    <div class="project-content">
+
+                        <span class="project-type">Personal Project</span>
+
+                        <h3>Personal Portfolio</h3>
+
+                        <p>
+                            A responsive portfolio website created to showcase
+                            my skills, interests, education and projects.
+                        </p>
+
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            Current Page →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="education section">
+
+            <div class="section-heading">
+                <p>MY EDUCATION</p>
+                <h2>University</h2>
+            </div>
+
+            <div class="education-box">
+
+                <div class="university-icon">
+                    AU
+                </div>
+
+                <div>
+                    <h3>Air University</h3>
+
+                    <h4>Bachelor of Science in Computer Science</h4>
+
+                    <p>
+                        Islamabad, Pakistan · Currently Studying
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact section" id="contact">
+
+            <div class="contact-box">
+
+                <div class="section-heading">
+                    <p>LET'S CONNECT</p>
+                    <h2>Have Something Interesting?</h2>
+                </div>
+
+                <p>
+                    I'm always interested in discussing technology,
+                    programming, projects and new ideas.
+                </p>
+
+                <a href="mailto:soban@example.com" class="primary-btn">
+                    Contact Me
+                </a>
+
+                <div class="contact-details">
+                    <span>soban@example.com</span>
+                    <span>Islamabad, Pakistan</span>
+                    <span>Computer Science Student</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Soban<span>.</span>
+        </div>
+
+        <p>
+            © 2026 Soban Farooq. Built with HTML & CSS.
+        </p>
+
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Upwork</a>
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
